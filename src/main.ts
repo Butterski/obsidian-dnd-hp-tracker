@@ -16,14 +16,14 @@ export default class HPTrackerPlugin extends Plugin {
 		);
 
 		this.addRibbonIcon('heart', 'D&D HP tracker', () => {
-			this.activateView();
+			void this.activateView();
 		});
 
 		this.addCommand({
 			id: 'open-hp-tracker',
 			name: 'Open HP tracker',
 			callback: () => {
-				this.activateView();
+				void this.activateView();
 			}
 		});
 

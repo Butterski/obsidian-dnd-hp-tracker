@@ -15,7 +15,7 @@ export class HPTrackerSettingTab extends PluginSettingTab {
 
 		// Use the Setting API heading for a consistent UI
 		new Setting(containerEl)
-			.setName("D&D HP tracker settings")
+			.setName("Character")
 			.setHeading();
 
 		new Setting(containerEl)
