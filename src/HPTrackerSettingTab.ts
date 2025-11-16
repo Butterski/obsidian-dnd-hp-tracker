@@ -13,7 +13,10 @@ export class HPTrackerSettingTab extends PluginSettingTab {
 		const { containerEl } = this;
 		containerEl.empty();
 
-		containerEl.createEl("h2", { text: "D&D HP Tracker Settings" });
+		// Use the Setting API heading for a consistent UI
+		new Setting(containerEl)
+			.setName("D&D HP tracker settings")
+			.setHeading();
 
 		new Setting(containerEl)
 			.setName("Maximum HP")
@@ -21,13 +24,13 @@ export class HPTrackerSettingTab extends PluginSettingTab {
 			.addText(text => text
 				.setPlaceholder("20")
 				.setValue(String(this.plugin.settings.maxHP))
-				.onChange(async (value) => {
+				.onChange((value) => {
 					const num = parseInt(value) || 20;
 					this.plugin.settings.maxHP = num;
 					if (this.plugin.settings.currentHP > num) {
 						this.plugin.settings.currentHP = num;
 					}
-					await this.plugin.saveSettings();
+					this.plugin.saveSettings().catch(err => console.error(err));
 				}));
 
 		new Setting(containerEl)
@@ -36,10 +39,10 @@ export class HPTrackerSettingTab extends PluginSettingTab {
 			.addText(text => text
 				.setPlaceholder("20")
 				.setValue(String(this.plugin.settings.currentHP))
-				.onChange(async (value) => {
+				.onChange((value) => {
 					const num = Math.max(0, Math.min(this.plugin.settings.maxHP, parseInt(value) || 0));
 					this.plugin.settings.currentHP = num;
-					await this.plugin.saveSettings();
+					this.plugin.saveSettings().catch(err => console.error(err));
 				}));
 
 		new Setting(containerEl)
@@ -48,10 +51,10 @@ export class HPTrackerSettingTab extends PluginSettingTab {
 			.addText(text => text
 				.setPlaceholder("0")
 				.setValue(String(this.plugin.settings.tempHP))
-				.onChange(async (value) => {
+				.onChange((value) => {
 					const num = Math.max(0, parseInt(value) || 0);
 					this.plugin.settings.tempHP = num;
-					await this.plugin.saveSettings();
+					this.plugin.saveSettings().catch(err => console.error(err));
 				}));
 	}
 }

@@ -15,13 +15,13 @@ export default class HPTrackerPlugin extends Plugin {
 			(leaf) => new HPTrackerView(leaf, this)
 		);
 
-		this.addRibbonIcon('heart', 'D&D HP Tracker', () => {
+		this.addRibbonIcon('heart', 'D&D HP tracker', () => {
 			this.activateView();
 		});
 
 		this.addCommand({
 			id: 'open-hp-tracker',
-			name: 'Open HP Tracker',
+			name: 'Open HP tracker',
 			callback: () => {
 				this.activateView();
 			}
@@ -51,7 +51,7 @@ export default class HPTrackerPlugin extends Plugin {
 	}
 
 	onunload() {
-		this.app.workspace.detachLeavesOfType(VIEW_TYPE_HP_TRACKER);
+		// Intentionally left blank. Do not detach leaves on unload as that can reset user layout.
 	}
 
 	async loadSettings() {
