@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "Track hit points, temporary HP, and apply damage/healing with resistance and vulnerability options for D&D characters.",
-	"author": "Your Name",
-	"authorUrl": "",
+	"author": "Butterski",
+	"authorUrl": "https://mzkuch.pl",
 	"isDesktopOnly": false
 }
