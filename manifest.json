@@ -6,5 +6,6 @@
 	"description": "Track hit points, temporary HP, and apply damage/healing with resistance and vulnerability options for D&D characters.",
 	"author": "Butterski",
 	"authorUrl": "https://mzkuch.pl",
-	"isDesktopOnly": false
+	"isDesktopOnly": false,
+	"repository": "https://github.com/Butterski/obsidian-dnd-hp-tracker"
 }
