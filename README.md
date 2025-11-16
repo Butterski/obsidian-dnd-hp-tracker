@@ -37,13 +37,6 @@ A simple and intuitive hit point tracker for your D&D characters, right in your 
 3. Select **Install**
 4. Enable the plugin in your Community plugins list
 
-### Manual Installation
-
-1. Download the latest release from the [Releases page](https://github.com/yourusername/obsidian-dnd-hp-tracker/releases)
-2. Extract the files to your vault's plugins folder: `<vault>/.obsidian/plugins/dnd-hp-tracker/`
-3. Reload Obsidian
-4. Enable the plugin in **Settings** → **Community plugins**
-
 ## 🎮 Usage
 
 ### Opening the HP Tracker
