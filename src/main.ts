@@ -40,17 +40,15 @@ export default class HPTrackerPlugin extends Plugin {
 			leaf = leaves[0];
 		} else {
 			leaf = workspace.getRightLeaf(false);
-			if (leaf) {
-				await leaf.setViewState({ type: VIEW_TYPE_HP_TRACKER, active: true });
-			}
-		}
-
 		if (leaf) {
-			workspace.revealLeaf(leaf);
+			await leaf.setViewState({ type: VIEW_TYPE_HP_TRACKER, active: true });
 		}
 	}
 
-	onunload() {
+	if (leaf) {
+		await workspace.revealLeaf(leaf);
+	}
+}	onunload() {
 		// Intentionally left blank. Do not detach leaves on unload as that can reset user layout.
 	}
 
